@@ -34,7 +34,13 @@ public class BirdRepository {
     }
 
     public Bird getBird(String birdName) {
-        
+        for (Bird bird : birdList)
+        {
+            if (birdName.equalsIgnoreCase(bird.name)) {
+                return bird;
+            }
+        }
+        return null;
     }
 
 }

@@ -69,7 +69,8 @@ public class Application {
                 System.out.println("Enter bird name do you want to delete:");
                 Scanner sc = new Scanner(System.in);
                 String birdName = sc.nextLine();
-
+                Bird bird = birdRepository.getBird(birdName);
+                birdRepository.remove(bird);
                 break;
             case 3:
                 userInterface.print(birdRepository.getBirdList());
@@ -98,7 +99,7 @@ public class Application {
         Bird ostrich = new Ostrich();
         ostrich.id = "O001";
         Bird ostrich2 = new Ostrich();
-        ostrich2.id = "O001";
+        ostrich2.id = "O002";
 
         BirdRepository birdRepository = BirdRepository.getInstance();
         birdRepository.add(parrot);
