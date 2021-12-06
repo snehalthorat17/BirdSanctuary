@@ -52,4 +52,5 @@ public class UserInterface {
         int option = sc.nextInt();
         return option;
     }
+
 }

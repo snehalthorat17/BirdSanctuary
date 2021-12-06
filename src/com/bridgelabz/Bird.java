@@ -2,7 +2,7 @@ package com.bridgelabz;
 
 import java.util.Objects;
 
-public abstract class Bird {
+public class Bird {
 
     enum Color {RED, GREEN, BLUE, WHITE, BLACK, BLACK_WHITE};
     Color color;
@@ -26,4 +26,5 @@ public abstract class Bird {
     public int hashCode() {
         return Objects.hash(id);
     }
+
 }

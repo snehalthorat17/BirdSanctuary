@@ -63,7 +63,7 @@ public class Application {
 
         switch (userOption){
             case 1:
-                addBird();
+                addNewBird();
                 break;
             case 2:
                 System.out.println("Enter bird name do you want to delete:");
@@ -108,5 +108,61 @@ public class Application {
         birdRepository.add(crow);
         birdRepository.add(ostrich);
         birdRepository.add(ostrich2);
+    }
+
+    public void addColorOption(Bird bird) {
+        System.out.println("Enter the colour of bird from below options:");
+        System.out.println("Enter 1 for RED");
+        System.out.println("Enter 2 for GREEN");
+        System.out.println("Enter 3 for BLUE");
+        System.out.println("Enter 4 for WHITE");
+        System.out.println("Enter 5 for BLACK");
+        System.out.println("Enter 6 for BLACK_WHITE");
+
+        Scanner sc = new Scanner(System.in);
+        int colorOption = sc.nextInt();
+//        return colorOption;
+
+        switch (colorOption) {
+            case 1:
+                bird.color = Bird.Color.RED;
+                break;
+            case 2:
+                bird.color = Bird.Color.GREEN;
+                break;
+            case 3:
+                bird.color = Bird.Color.BLUE;
+                break;
+            case 4:
+                bird.color = Bird.Color.WHITE;
+                break;
+            case 5:
+                bird.color = Bird.Color.BLACK;
+                break;
+            case 6:
+                bird.color = Bird.Color.BLACK_WHITE;
+                break;
+            default:
+                System.out.println("Please enter proper input");
+                break;
+
+        }
+    }
+    void addNewBird() {
+
+        System.out.println("Please enter bird you want to add: ");
+        Scanner sc1 = new Scanner(System.in);
+        Bird bird = new Bird();
+        bird.name = sc1.nextLine();
+
+        System.out.println("Enter the id of bird:");
+        Scanner scanner = new Scanner(System.in);
+        bird.id = scanner.nextLine();
+
+        addColorOption(bird);
+        BirdRepository birdRepository = BirdRepository.getInstance();
+        birdRepository.add(bird);
+
+
     }
 }
